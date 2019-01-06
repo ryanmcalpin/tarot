@@ -10,15 +10,20 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    List<String> deck;
+    private Deck deck;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        deck = new Deck().getDeck();
+        deck = new Deck();
+        List<String> cards = deck.getCards();
 
-        Log.d("RRR", "onCreate: " + deck);
+
+        Log.d("RRR", "onCreate: " + cards);
+        Log.d("RRR", "SIZE: " + cards.size());
+
+//        String testCard = deck.drawCard();
     }
 }

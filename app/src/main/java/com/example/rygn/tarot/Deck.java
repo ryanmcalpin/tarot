@@ -8,7 +8,7 @@ public class Deck {
     List<String> minorArcNoSuit = new ArrayList<>();
     List<String> suits = new ArrayList<>();
 
-    public List<String> getDeck() {
+    public List<String> getCards() {
         cards.add("The Magician");
         cards.add("The High Priestess");
         cards.add("The Empress");
@@ -59,5 +59,9 @@ public class Deck {
         }
 
         return cards;
+    }
+
+    public String drawCard() {
+        return "okaaay";
     }
 }
