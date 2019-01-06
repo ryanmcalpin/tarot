@@ -8,6 +8,7 @@ import com.example.rygn.tarot.Deck;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,17 +25,19 @@ public class MainActivity extends AppCompatActivity {
         Log.d("RRR", "DECK: " + deck);
         Log.d("RRR", "SIZE: " + deck.size());
 
-        List<String> testCards = drawCards(deck, 3);
+        List<String> testSpread = drawCards(deck, 3);
 
-        Log.d("RRR", "CARDS: " + testCards);
+        Log.d("RRR", "SPREAD: " + testSpread);
         Log.d("RRR", "NEWsIZE: " + deck.size());
     }
 
     public List<String> drawCards(List<String> deck, int amount) {
         List<String> spread = new ArrayList<>();
+        Random r = new Random();
         for (int i = 0; i < amount; i++) {
-            spread.add(deck.get(0));
-            deck.remove(0);
+            int rand = r.nextInt(deck.size() + 1);
+            spread.add(deck.get(rand));
+            deck.remove(rand);
         }
         return spread;
     }
