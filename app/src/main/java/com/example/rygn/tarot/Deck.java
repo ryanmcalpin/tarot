@@ -60,8 +60,4 @@ public class Deck {
 
         return cards;
     }
-
-    public String drawCard() {
-        return "okaaay";
-    }
 }

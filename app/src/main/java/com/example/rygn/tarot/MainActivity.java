@@ -21,9 +21,18 @@ public class MainActivity extends AppCompatActivity {
         List<String> cards = deck.getCards();
 
 
-        Log.d("RRR", "onCreate: " + cards);
+        Log.d("RRR", "DECK: " + cards);
         Log.d("RRR", "SIZE: " + cards.size());
 
-//        String testCard = deck.drawCard();
+        String testCard = drawCard(cards);
+
+        Log.d("RRR", "CARD: " + testCard);
+        Log.d("RRR", "NEWsIZE: " + cards.size());
+    }
+
+    public String drawCard(List<String> cards) {
+        String card = cards.get(0);
+        cards.remove(0);
+        return card;
     }
 }
