@@ -6,6 +6,7 @@ import android.util.Log;
 
 import com.example.rygn.tarot.Deck;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,22 +18,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        deck = new Deck();
-        List<String> cards = deck.getCards();
+        List<String> deck = new Deck().getCards();
 
 
-        Log.d("RRR", "DECK: " + cards);
-        Log.d("RRR", "SIZE: " + cards.size());
+        Log.d("RRR", "DECK: " + deck);
+        Log.d("RRR", "SIZE: " + deck.size());
 
-        String testCard = drawCard(cards);
+        List<String> testCards = drawCards(deck, 3);
 
-        Log.d("RRR", "CARD: " + testCard);
-        Log.d("RRR", "NEWsIZE: " + cards.size());
+        Log.d("RRR", "CARDS: " + testCards);
+        Log.d("RRR", "NEWsIZE: " + deck.size());
     }
 
-    public String drawCard(List<String> cards) {
-        String card = cards.get(0);
-        cards.remove(0);
-        return card;
+    public List<String> drawCards(List<String> deck, int amount) {
+        List<String> spread = new ArrayList<>();
+        for (int i = 0; i < amount; i++) {
+            spread.add(deck.get(0));
+            deck.remove(0);
+        }
+        return spread;
     }
 }
