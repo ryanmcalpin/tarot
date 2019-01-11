@@ -19,26 +19,28 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        List<String> deck = new Deck().getCards();
+        List<Card> deck = new Deck().getCards();
 
 
         Log.d("RRR", "DECK: " + deck);
         Log.d("RRR", "SIZE: " + deck.size());
 
-        List<String> testSpread = drawCards(deck, 3);
+        List<Card> testSpread = drawCards(deck, 3);
 
         Log.d("RRR", "SPREAD: " + testSpread);
         Log.d("RRR", "NEWsIZE: " + deck.size());
     }
 
-    public List<String> drawCards(List<String> deck, int amount) {
-        List<String> spread = new ArrayList<>();
+    public List<Card> drawCards(List<Card> deck, int amount) {
+        List<Card> drawnCards = new ArrayList<Card>();
         Random r = new Random();
+        int currentDeckSize = deck.size();
         for (int i = 0; i < amount; i++) {
-            int rand = r.nextInt(deck.size() + 1);
-            spread.add(deck.get(rand));
+            int rand = r.nextInt(currentDeckSize + 1);
+            drawnCards.add(deck.get(rand));
             deck.remove(rand);
+            currentDeckSize -= 1;
         }
-        return spread;
+        return drawnCards;
     }
 }
