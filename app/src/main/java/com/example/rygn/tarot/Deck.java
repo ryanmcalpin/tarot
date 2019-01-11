@@ -5,12 +5,8 @@ import java.util.List;
 
 public class Deck {
     List<Card> cards = new ArrayList<>();
-    List<String> minorArcNoSuit = new ArrayList<>();
-    List<String> suits = new ArrayList<>();
 
     public List<Card> getCards() {
-
-
         cards.add(new Card("The Magician", "", ""));
         cards.add(new Card("The High Priestess", "", ""));
         cards.add(new Card("The Empress", "", ""));
@@ -93,20 +89,6 @@ public class Deck {
         cards.add(new Card("Knight of Cups", "", ""));
         cards.add(new Card("Queen of Cups", "", ""));
         cards.add(new Card("King of Cups", "", ""));
-
-
-
-//
-//        suits.add("Swords");
-//        suits.add("Wands");
-//        suits.add("Pentacles");
-//        suits.add("Cups");
-//
-//        for (int i = 0; i < suits.size(); i++) {
-//            for (int ii = 0; ii < minorArcNoSuit.size(); ii++) {
-//                cards.add(minorArcNoSuit.get(ii) + " of " + suits.get(i));
-//            }
-//        }
 
         return cards;
     }
