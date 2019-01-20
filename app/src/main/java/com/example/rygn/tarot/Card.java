@@ -4,6 +4,7 @@ public class Card {
     String title;
     String imageUrl;
     String description;
+    boolean reversed;
 
     public Card() {}
 
@@ -11,6 +12,7 @@ public class Card {
         this.title = title;
         this.imageUrl = imageUrl;
         this.description = description;
+        this.reversed = false;
     }
 
     public String getTitle() {
@@ -35,5 +37,13 @@ public class Card {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public boolean isReversed() {
+        return reversed;
+    }
+
+    public void setReversed(boolean reversed) {
+        this.reversed = reversed;
     }
 }

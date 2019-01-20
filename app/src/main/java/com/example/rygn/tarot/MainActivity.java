@@ -21,23 +21,20 @@ public class MainActivity extends AppCompatActivity {
 
         List<Card> deck = new Deck().getCards();
 
-
-        Log.d("RRR", "DECK: " + deck);
-        Log.d("RRR", "SIZE: " + deck.size());
-
         List<Card> testSpread = drawCards(deck, 3);
-
-        Log.d("RRR", "SPREAD: " + testSpread);
-        Log.d("RRR", "NEWsIZE: " + deck.size());
     }
 
     public List<Card> drawCards(List<Card> deck, int amount) {
         List<Card> drawnCards = new ArrayList<Card>();
         Random r = new Random();
+
         int currentDeckSize = deck.size();
         for (int i = 0; i < amount; i++) {
             int rand = r.nextInt(currentDeckSize + 1);
-            drawnCards.add(deck.get(rand));
+            Card card = deck.get(rand);
+            boolean orientation = r.nextBoolean();
+            card.setReversed(orientation);
+            drawnCards.add(card);
             deck.remove(rand);
             currentDeckSize -= 1;
         }
