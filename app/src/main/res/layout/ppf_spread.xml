@@ -20,7 +20,7 @@
     <ImageView
         android:id="@+id/past_img_view"
         android:layout_width="100dp"
-        android:layout_height="160dp"
+        android:layout_height="173dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
@@ -37,7 +37,7 @@
     <ImageView
         android:id="@+id/present_img_view"
         android:layout_width="100dp"
-        android:layout_height="160dp"
+        android:layout_height="173dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
@@ -54,7 +54,7 @@
     <ImageView
         android:id="@+id/future_img_view"
         android:layout_width="100dp"
-        android:layout_height="160dp"
+        android:layout_height="173dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
@@ -71,9 +71,10 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
-        android:layout_height="16dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="PAST"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/past_img_view"
         app:layout_constraintStart_toStartOf="@+id/past_img_view"
         app:layout_constraintTop_toBottomOf="@+id/past_img_view" />
@@ -84,6 +85,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="PRESENT"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/present_img_view"
         app:layout_constraintStart_toStartOf="@+id/present_img_view"
         app:layout_constraintTop_toBottomOf="@+id/present_img_view" />
@@ -94,6 +96,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="FUTURE"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/future_img_view"
         app:layout_constraintStart_toStartOf="@+id/future_img_view"
         app:layout_constraintTop_toBottomOf="@+id/future_img_view" />
