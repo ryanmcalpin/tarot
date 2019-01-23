@@ -10,7 +10,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Deck deck;
+//    private Deck deck;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
