@@ -1,5 +1,6 @@
 package com.example.rygn.tarot;
 
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +14,8 @@ import java.util.List;
 import java.util.Random;
 
 public class SpreadActivity extends AppCompatActivity implements View.OnClickListener {
+
+    List<Card> testSpread;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +34,7 @@ public class SpreadActivity extends AppCompatActivity implements View.OnClickLis
 
         List<Card> deck = new Deck().getCards();
 
-        List<Card> testSpread = drawCards(deck, 3);
+        testSpread = drawCards(deck, 3);
 
         String spreadText = "";
         for (int i = 0; i < testSpread.size(); i++) {
@@ -51,21 +54,28 @@ public class SpreadActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.past_img_view:
-                Log.d("RRR", "onClick: " + "past");
+                showDialogFrag(0);
                 break;
 
             case R.id.present_img_view:
-                Log.d("RRR", "onClick: " + "present");
+                showDialogFrag(1);
                 break;
 
             case R.id.future_img_view:
-                Log.d("RRR", "onClick: " + "future");
+                showDialogFrag(2);
                 break;
 
             default:
                 Log.d("RRR", "onClick: " + "whoops");
                 break;
         }
+    }
+
+    public void showDialogFrag(int i) {
+        Card card = testSpread.get(i);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(card.description + "A sign of cool things and rad times to come.")
+                .setTitle(card.title).show();
     }
 
     public List<Card> drawCards(List<Card> deck, int amount) {
