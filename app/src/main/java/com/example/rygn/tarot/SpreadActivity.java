@@ -39,6 +39,8 @@ public class SpreadActivity extends AppCompatActivity implements View.OnClickLis
 
         List<Card> deck = new Deck().getCards();
 
+        Log.d("RRR", "onCreate: " + deck.size());
+
         spread = drawCards(deck, 3);
 
         displayCards();
@@ -92,7 +94,7 @@ public class SpreadActivity extends AppCompatActivity implements View.OnClickLis
 
         int currentDeckSize = deck.size();
         for (int i = 0; i < amount; i++) {
-            int rand = r.nextInt(currentDeckSize + 1);
+            int rand = r.nextInt(currentDeckSize);
             Card card = deck.get(rand);
             boolean orientation = r.nextBoolean();
             card.setReversed(orientation);
