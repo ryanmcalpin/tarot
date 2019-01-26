@@ -7,6 +7,7 @@ public class Deck {
     List<Card> cards = new ArrayList<>();
 
     public List<Card> getCards() {
+        cards.add(new Card("The Fool", "", ""));
         cards.add(new Card("The Magician", "", ""));
         cards.add(new Card("The High Priestess", "", ""));
         cards.add(new Card("The Empress", "", ""));
@@ -28,7 +29,6 @@ public class Deck {
         cards.add(new Card("The Sun", "", ""));
         cards.add(new Card("Judgement", "", ""));
         cards.add(new Card("The World", "", ""));
-        cards.add(new Card("The Fool", "", ""));
 
         cards.add(new Card("Ace of Swords", "", ""));
         cards.add(new Card("Two of Swords", "", ""));
