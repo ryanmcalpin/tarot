@@ -22,19 +22,28 @@ public class SpreadActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ppf_spread);
 
-        ImageView pastCard = findViewById(R.id.past_img_view);
-        ImageView presentCard = findViewById(R.id.present_img_view);
-        ImageView futureCard = findViewById(R.id.future_img_view);
+        ImageView pastCardView = findViewById(R.id.past_img_view);
+        ImageView presentCardView = findViewById(R.id.present_img_view);
+        ImageView futureCardView = findViewById(R.id.future_img_view);
 
-        pastCard.setOnClickListener(this);
-        presentCard.setOnClickListener(this);
-        futureCard.setOnClickListener(this);
+        pastCardView.setOnClickListener(this);
+        presentCardView.setOnClickListener(this);
+        futureCardView.setOnClickListener(this);
 
         TextView testView = findViewById(R.id.test_text_view);
 
         List<Card> deck = new Deck().getCards();
 
         testSpread = drawCards(deck, 3);
+
+        Card pastCard = testSpread.get(0);
+        Card presentCard = testSpread.get(1);
+        Card futureCard = testSpread.get(2);
+
+
+        pastCardView.setImageDrawable(getDrawable(pastCard.resId));
+        presentCardView.setImageDrawable(getDrawable(presentCard.resId));
+        futureCardView.setImageDrawable(getDrawable(futureCard.resId));
 
         String spreadText = "";
         for (int i = 0; i < testSpread.size(); i++) {

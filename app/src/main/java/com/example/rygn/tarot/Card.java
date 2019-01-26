@@ -2,15 +2,15 @@ package com.example.rygn.tarot;
 
 public class Card {
     String title;
-    String imageUrl;
+    int resId;
     String description;
     boolean reversed;
 
     public Card() {}
 
-    public Card(String title, String imageUrl, String description) {
+    public Card(String title, int resId, String description) {
         this.title = title;
-        this.imageUrl = imageUrl;
+        this.resId = resId;
         this.description = description;
         this.reversed = false;
     }
@@ -23,12 +23,12 @@ public class Card {
         this.title = title;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public int getResId() {
+        return resId;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setResId(int imageUrl) {
+        this.resId = resId;
     }
 
     public String getDescription() {
