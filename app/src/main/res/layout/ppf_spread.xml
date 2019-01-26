@@ -6,17 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".SpreadActivity">
 
-    <TextView
-        android:id="@+id/test_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.95" />
-
     <ImageView
         android:id="@+id/past_img_view"
         android:layout_width="100dp"
@@ -31,7 +20,7 @@
         app:layout_constraintEnd_toStartOf="@+id/present_img_view"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4"
+        app:layout_constraintVertical_bias="0.43"
         app:srcCompat="@android:color/darker_gray" />
 
     <ImageView
@@ -48,7 +37,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4"
+        app:layout_constraintVertical_bias="0.43"
         app:srcCompat="@android:color/darker_gray" />
 
     <ImageView
@@ -65,7 +54,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/present_img_view"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4"
+        app:layout_constraintVertical_bias="0.43"
         app:srcCompat="@android:color/darker_gray" />
 
     <TextView

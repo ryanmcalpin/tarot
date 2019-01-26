@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,48 +14,35 @@ import java.util.Random;
 
 public class SpreadActivity extends AppCompatActivity implements View.OnClickListener {
 
-    List<Card> testSpread;
+    ImageView pastCardView;
+    ImageView presentCardView;
+    ImageView futureCardView;
+    List<Card> spread;
+    List<ImageView> cardViews = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ppf_spread);
 
-        ImageView pastCardView = findViewById(R.id.past_img_view);
-        ImageView presentCardView = findViewById(R.id.present_img_view);
-        ImageView futureCardView = findViewById(R.id.future_img_view);
+        pastCardView = findViewById(R.id.past_img_view);
+        presentCardView = findViewById(R.id.present_img_view);
+        futureCardView = findViewById(R.id.future_img_view);
+
+        cardViews.add(pastCardView);
+        cardViews.add(presentCardView);
+        cardViews.add(futureCardView);
 
         pastCardView.setOnClickListener(this);
         presentCardView.setOnClickListener(this);
         futureCardView.setOnClickListener(this);
 
-        TextView testView = findViewById(R.id.test_text_view);
-
         List<Card> deck = new Deck().getCards();
 
-        testSpread = drawCards(deck, 3);
+        spread = drawCards(deck, 3);
 
-        Card pastCard = testSpread.get(0);
-        Card presentCard = testSpread.get(1);
-        Card futureCard = testSpread.get(2);
+        displayCards();
 
-
-        pastCardView.setImageDrawable(getDrawable(pastCard.resId));
-        presentCardView.setImageDrawable(getDrawable(presentCard.resId));
-        futureCardView.setImageDrawable(getDrawable(futureCard.resId));
-
-        String spreadText = "";
-        for (int i = 0; i < testSpread.size(); i++) {
-            Card card = testSpread.get(i);
-            spreadText += card.title;
-            if (card.reversed) {
-                spreadText += " (r)";
-            }
-            if (i + 1 != testSpread.size()) {
-                spreadText += " | ";
-            }
-        }
-        testView.setText(spreadText);
     }
 
     @Override
@@ -80,11 +66,24 @@ public class SpreadActivity extends AppCompatActivity implements View.OnClickLis
         }
     }
 
+    public void displayCards() {
+        for (int i = 0; i < spread.size(); i++) {
+            cardViews.get(i).setImageDrawable(getDrawable(spread.get(i).resId));
+            if (spread.get(i).reversed) {
+                cardViews.get(i).setRotation(180);
+            }
+        }
+    }
+
     public void showDialogFrag(int i) {
-        Card card = testSpread.get(i);
+        Card card = spread.get(i);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        String rev = "";
+        if (card.reversed) {
+            rev = " (reversed)";
+        }
         builder.setMessage(card.description + "A sign of cool things and rad times to come.")
-                .setTitle(card.title).show();
+                .setTitle(card.title + rev).show();
     }
 
     public List<Card> drawCards(List<Card> deck, int amount) {
