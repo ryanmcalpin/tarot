@@ -2,18 +2,18 @@ package com.example.rygn.tarot;
 
 public class Card {
     String title;
-    int resId;
-    String description;
-    String rDescription;
+    int imageId;
+    int descriptionId;
+    int rDescriptionId;
     boolean reversed;
 
     public Card() {}
 
-    public Card(String title, int resId, String description, String rDescription) {
+    public Card(String title, int imageId, int descriptionId, int rDescriptionId) {
         this.title = title;
-        this.resId = resId;
-        this.description = description;
-        this.rDescription = rDescription;
+        this.imageId = imageId;
+        this.descriptionId = descriptionId;
+        this.rDescriptionId = rDescriptionId;
         this.reversed = false;
     }
 
@@ -25,28 +25,28 @@ public class Card {
         this.title = title;
     }
 
-    public int getResId() {
-        return resId;
+    public int getImageId() {
+        return imageId;
     }
 
-    public void setResId(int imageUrl) {
-        this.resId = resId;
+    public void setImageId(int imageUrl) {
+        this.imageId = imageId;
     }
 
-    public String getDescription() {
-        return description;
+    public int getDescriptionId() {
+        return descriptionId;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDescriptionId(int descriptionId) {
+        this.descriptionId = descriptionId;
     }
 
-    public String getrDescription() {
-        return rDescription;
+    public int getrDescriptionId() {
+        return rDescriptionId;
     }
 
-    public void setrDescription(String rDescription) {
-        this.rDescription = rDescription;
+    public void setrDescriptionId(int rDescriptionId) {
+        this.rDescriptionId = rDescriptionId;
     }
 
     public boolean isReversed() {

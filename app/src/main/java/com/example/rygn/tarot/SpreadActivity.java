@@ -70,7 +70,7 @@ public class SpreadActivity extends AppCompatActivity implements View.OnClickLis
 
     public void displayCards() {
         for (int i = 0; i < spread.size(); i++) {
-            cardViews.get(i).setImageDrawable(getDrawable(spread.get(i).resId));
+            cardViews.get(i).setImageDrawable(getDrawable(spread.get(i).imageId));
             if (spread.get(i).reversed) {
                 cardViews.get(i).setRotation(180);
             }
@@ -81,12 +81,12 @@ public class SpreadActivity extends AppCompatActivity implements View.OnClickLis
         Card card = spread.get(i);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         String rev = "";
-        String mes = card.description;
+        int mesId = card.descriptionId;
         if (card.reversed) {
             rev = " (reversed)";
-            mes = card.rDescription;
+            mesId = card.rDescriptionId;
         }
-        builder.setMessage(mes)
+        builder.setMessage(getString(mesId))
                 .setTitle(card.title + rev).show();
     }
 

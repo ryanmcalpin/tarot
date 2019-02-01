@@ -1,5 +1,7 @@
 package com.example.rygn.tarot;
 
+import android.content.res.Resources;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,8 +9,8 @@ public class Deck {
     List<Card> cards = new ArrayList<>();
 
     public List<Card> getCards() {
-        cards.add(new Card("The Fool", R.drawable.maj_00, "A", "Ar"));
-        cards.add(new Card("The Magician", R.drawable.maj_01, "B", "Br"));
+        cards.add(new Card("The Fool", R.drawable.maj_00, R.string.c2, R.string.c2r));
+        cards.add(new Card("The Magician", R.drawable.maj_01, R.string.c2, R.string.c2r));
 //        cards.add(new Card("The High Priestess", R.drawable.maj_02, "C"));
 //        cards.add(new Card("The Empress", R.drawable.maj_03, "D"));
 //        cards.add(new Card("The Emperor", R.drawable.maj_04, ""));
@@ -76,7 +78,7 @@ public class Deck {
 //        cards.add(new Card("King of Pentacles", R.drawable.min_p_ki, ""));
 //
 //        cards.add(new Card("Ace of Cups", R.drawable.min_c_ac, ""));
-        cards.add(new Card("Two of Cups", R.drawable.min_c_02, "The two of cups shows a blossoming partnership, usually romantic, but it can also indicate warm friendships, beneficial business partners, and fruitful creative unions. This card shows strong mutual attraction as well as respect and harmony. There is a clear connection here.", "The two of cups when reversed can signify an imbalance or disharmony in life or in a partnership. It may mean a romantic relationship is heading toward dissolution or perhaps that it is one-sided and requires work to be balanced. The two of cups may also indicate self-love and focusing inward instead of on others. There may be a strong need for self-acceptance and self-respect."));
+        cards.add(new Card("Two of Cups", R.drawable.min_c_02, R.string.c2, R.string.c2r));
 //        cards.add(new Card("Three of Cups", R.drawable.min_c_03, ""));
 //        cards.add(new Card("Four of Cups", R.drawable.min_c_04, ""));
 //        cards.add(new Card("Five of Cups", R.drawable.min_c_05, ""));
