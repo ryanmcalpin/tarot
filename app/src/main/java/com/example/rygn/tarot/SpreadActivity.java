@@ -81,10 +81,12 @@ public class SpreadActivity extends AppCompatActivity implements View.OnClickLis
         Card card = spread.get(i);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         String rev = "";
+        String mes = card.description;
         if (card.reversed) {
             rev = " (reversed)";
+            mes = card.rDescription;
         }
-        builder.setMessage(card.description + "A sign of cool things and rad times to come.")
+        builder.setMessage(mes)
                 .setTitle(card.title + rev).show();
     }
 
