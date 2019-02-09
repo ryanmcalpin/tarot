@@ -1,16 +1,25 @@
 package com.example.rygn.tarot;
 
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Layout;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
+import static android.text.Layout.JUSTIFICATION_MODE_INTER_WORD;
 
 public class SpreadActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -79,15 +88,29 @@ public class SpreadActivity extends AppCompatActivity implements View.OnClickLis
 
     public void showDialogFrag(int i) {
         Card card = spread.get(i);
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
         String rev = "";
         int mesId = card.descriptionId;
         if (card.reversed) {
             rev = " (reversed)";
             mesId = card.rDescriptionId;
         }
-        builder.setMessage(getString(mesId))
-                .setTitle(card.title + rev).show();
+
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        LayoutInflater inflater = LayoutInflater.from(this);
+        final View view = inflater.inflate(R.layout.dialog_view, null);
+        TextView titleView = view.findViewById(R.id.title_view);
+        ImageView imageView = view.findViewById(R.id.dialog_image_view);
+        TextView descriptionView = view.findViewById(R.id.description_view);
+
+        titleView.setText(card.title + rev);
+        imageView.setImageResource(card.imageId);
+        descriptionView.setText(getString(mesId));
+//        descriptionView.setJustificationMode(JUSTIFICATION_MODE_INTER_WORD);
+
+        builder.setView(view).show();
     }
 
     public List<Card> drawCards(List<Card> deck, int amount) {
