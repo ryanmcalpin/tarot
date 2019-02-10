@@ -7,32 +7,30 @@
     tools:context=".SpreadActivity">
 
     <ImageView
-        android:id="@+id/past_img_view"
+        android:id="@+id/card_view_1"
         android:layout_width="100dp"
         android:layout_height="173dp"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:tag="1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/present_img_view"
+        app:layout_constraintEnd_toStartOf="@+id/card_view_2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.43"
         app:srcCompat="@android:color/darker_gray" />
 
     <ImageView
-        android:id="@+id/present_img_view"
+        android:id="@+id/card_view_2"
         android:layout_width="100dp"
         android:layout_height="173dp"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         android:layout_marginBottom="8dp"
+        android:tag="2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,18 +39,17 @@
         app:srcCompat="@android:color/darker_gray" />
 
     <ImageView
-        android:id="@+id/future_img_view"
+        android:id="@+id/card_view_3"
         android:layout_width="100dp"
         android:layout_height="173dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         android:layout_marginBottom="8dp"
+        android:tag="3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/present_img_view"
+        app:layout_constraintStart_toEndOf="@+id/card_view_2"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.43"
         app:srcCompat="@android:color/darker_gray" />
@@ -64,9 +61,9 @@
         android:layout_marginTop="8dp"
         android:text="PAST"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/past_img_view"
-        app:layout_constraintStart_toStartOf="@+id/past_img_view"
-        app:layout_constraintTop_toBottomOf="@+id/past_img_view" />
+        app:layout_constraintEnd_toEndOf="@+id/card_view_1"
+        app:layout_constraintStart_toStartOf="@+id/card_view_1"
+        app:layout_constraintTop_toBottomOf="@+id/card_view_1" />
 
     <TextView
         android:id="@+id/textView2"
@@ -75,9 +72,9 @@
         android:layout_marginTop="8dp"
         android:text="PRESENT"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/present_img_view"
-        app:layout_constraintStart_toStartOf="@+id/present_img_view"
-        app:layout_constraintTop_toBottomOf="@+id/present_img_view" />
+        app:layout_constraintEnd_toEndOf="@+id/card_view_2"
+        app:layout_constraintStart_toStartOf="@+id/card_view_2"
+        app:layout_constraintTop_toBottomOf="@+id/card_view_2" />
 
     <TextView
         android:id="@+id/textView3"
@@ -86,8 +83,8 @@
         android:layout_marginTop="8dp"
         android:text="FUTURE"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/future_img_view"
-        app:layout_constraintStart_toStartOf="@+id/future_img_view"
-        app:layout_constraintTop_toBottomOf="@+id/future_img_view" />
+        app:layout_constraintEnd_toEndOf="@+id/card_view_3"
+        app:layout_constraintStart_toStartOf="@+id/card_view_3"
+        app:layout_constraintTop_toBottomOf="@+id/card_view_3" />
 
 </android.support.constraint.ConstraintLayout>

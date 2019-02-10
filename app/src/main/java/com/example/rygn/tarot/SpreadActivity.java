@@ -16,9 +16,6 @@ import java.util.Random;
 
 public class SpreadActivity extends AppCompatActivity implements View.OnClickListener {
 
-    ImageView pastCardView;
-    ImageView presentCardView;
-    ImageView futureCardView;
     List<Card> spread;
     List<ImageView> cardViews = new ArrayList<>();
 
@@ -26,6 +23,7 @@ public class SpreadActivity extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
+        int cardAmount = intent.getIntExtra("amount", 0);
 
         switch (intent.getStringExtra("spread")) {
             case "ppf":
@@ -41,23 +39,27 @@ public class SpreadActivity extends AppCompatActivity implements View.OnClickLis
                 break;
         }
 
-        pastCardView = findViewById(R.id.past_img_view);
-        presentCardView = findViewById(R.id.present_img_view);
-        futureCardView = findViewById(R.id.future_img_view);
+        cardViews.add((ImageView) findViewById(R.id.card_view_1));
+        cardViews.add((ImageView) findViewById(R.id.card_view_2));
+        cardViews.add((ImageView) findViewById(R.id.card_view_3));
 
-        cardViews.add(pastCardView);
-        cardViews.add(presentCardView);
-        cardViews.add(futureCardView);
+        if (cardAmount > 3) {
+            cardViews.add((ImageView) findViewById(R.id.card_view_4));
+            cardViews.add((ImageView) findViewById(R.id.card_view_5));
+            cardViews.add((ImageView) findViewById(R.id.card_view_6));
+            cardViews.add((ImageView) findViewById(R.id.card_view_7));
+            cardViews.add((ImageView) findViewById(R.id.card_view_8));
+            cardViews.add((ImageView) findViewById(R.id.card_view_9));
+            cardViews.add((ImageView) findViewById(R.id.card_view_10));
+        }
 
-        pastCardView.setOnClickListener(this);
-        presentCardView.setOnClickListener(this);
-        futureCardView.setOnClickListener(this);
+        for (int i = 0; i < cardViews.size(); i++) {
+            cardViews.get(i).setOnClickListener(this);
+        }
 
         List<Card> deck = new Deck().getCards();
 
-        Log.d("RRR", "onCreate: " + deck.size());
-
-        spread = drawCards(deck, 3);
+        spread = drawCards(deck, cardAmount);
 
         displayCards();
 
@@ -65,29 +67,19 @@ public class SpreadActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.past_img_view:
-                showDialogFrag(0);
-                break;
-
-            case R.id.present_img_view:
-                showDialogFrag(1);
-                break;
-
-            case R.id.future_img_view:
-                showDialogFrag(2);
-                break;
-
-            default:
-                Log.d("RRR", "onClick: " + "whoops");
-                break;
-        }
+        int i = Integer.parseInt(view.getTag().toString()) - 1;
+        showDialogFrag(i);
     }
 
     public void displayCards() {
         for (int i = 0; i < spread.size(); i++) {
             cardViews.get(i).setImageDrawable(getDrawable(spread.get(i).imageId));
-            if (spread.get(i).reversed) {
+            if (spread.size() == 10 && i == 1) {
+                cardViews.get(i).setRotation(90);
+                if (spread.get(i).reversed) {
+                    cardViews.get(i).setRotation(270);
+                }
+            } else if (spread.get(i).reversed) {
                 cardViews.get(i).setRotation(180);
             }
         }

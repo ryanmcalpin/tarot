@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MenuActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -14,16 +15,24 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        Button ppfButton = findViewById(R.id.ppfButton);
+        Button ppfButton = findViewById(R.id.ppf_button);
+        Button ccButton = findViewById(R.id.cc_button);
         ppfButton.setOnClickListener(this);
+        ccButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         Intent intent = new Intent(MenuActivity.this, SpreadActivity.class);
         switch (v.getId()){
-            case R.id.ppfButton:
+            case R.id.ppf_button:
                 intent.putExtra("spread", "ppf");
+                intent.putExtra("amount", 3);
+                break;
+
+            case R.id.cc_button:
+                intent.putExtra("spread", "cc");
+                intent.putExtra("amount", 10);
                 break;
 
              default:
