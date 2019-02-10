@@ -1,5 +1,6 @@
 package com.example.rygn.tarot;
 
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,7 +25,21 @@ public class SpreadActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ppf_spread);
+        Intent intent = getIntent();
+
+        switch (intent.getStringExtra("spread")) {
+            case "ppf":
+                setContentView(R.layout.ppf_spread);
+                break;
+
+            case "cc":
+                setContentView(R.layout.cc_spread);
+                break;
+
+            default:
+                Log.d("RRR", "onCreate: " + "whoops");
+                break;
+        }
 
         pastCardView = findViewById(R.id.past_img_view);
         presentCardView = findViewById(R.id.present_img_view);
