@@ -62,7 +62,6 @@ public class SpreadActivity extends AppCompatActivity implements View.OnClickLis
         spread = drawCards(deck, cardAmount);
 
         displayCards();
-
     }
 
     @Override
