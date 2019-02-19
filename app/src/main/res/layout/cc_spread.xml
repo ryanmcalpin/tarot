@@ -6,43 +6,58 @@
     android:layout_height="match_parent"
     tools:context=".SpreadActivity">
 
-    <ImageView
-        android:id="@+id/card_view_1"
-        android:layout_width="50dp"
+    <RelativeLayout
+        android:id="@+id/layout_1n2"
+        android:layout_width="87dp"
         android:layout_height="87dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:tag="1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.361"
+        app:layout_constraintHorizontal_bias="0.33"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.43"
-        app:srcCompat="@android:color/darker_gray" />
+        app:layout_constraintVertical_bias="0.46">
 
-    <ImageView
-        android:id="@+id/card_view_2"
-        android:layout_width="87dp"
-        android:layout_height="50dp"
-        android:tag="2"
-        app:layout_constraintBottom_toBottomOf="@+id/card_view_1"
-        app:layout_constraintEnd_toEndOf="@+id/card_view_1"
-        app:layout_constraintStart_toStartOf="@+id/card_view_1"
-        app:layout_constraintTop_toTopOf="@+id/card_view_1"
-        app:srcCompat="@android:color/darker_gray" />
+        <ImageView
+            android:id="@+id/card_view_1"
+            android:layout_width="50dp"
+            android:layout_height="87dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:tag="1"
+            app:srcCompat="@android:color/darker_gray" />
+
+        <ImageView
+            android:id="@+id/card_view_2"
+            android:layout_width="50dp"
+            android:layout_height="87dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:tag="2"
+            app:srcCompat="@android:color/darker_gray" />
+    </RelativeLayout>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent=".46"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/card_view_3"
         android:layout_width="50dp"
         android:layout_height="87dp"
-        android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:tag="3"
-        app:layout_constraintBottom_toTopOf="@+id/card_view_1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.362"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/layout_1n2"
+        app:layout_constraintEnd_toEndOf="@+id/layout_1n2"
+        app:layout_constraintStart_toStartOf="@+id/layout_1n2"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@android:color/darker_gray" />
@@ -52,58 +67,48 @@
         android:layout_width="50dp"
         android:layout_height="87dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
         android:tag="4"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.362"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/card_view_1"
+        app:layout_constraintEnd_toEndOf="@+id/layout_1n2"
+        app:layout_constraintStart_toStartOf="@+id/layout_1n2"
+        app:layout_constraintTop_toBottomOf="@+id/layout_1n2"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@android:color/darker_gray" />
 
     <ImageView
         android:id="@+id/card_view_5"
         android:layout_width="50dp"
-        android:layout_height="83dp"
+        android:layout_height="87dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:tag="5"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/layout_1n2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/card_view_2"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/layout_1n2"
+        app:layout_constraintTop_toTopOf="@+id/layout_1n2"
         app:layout_constraintVertical_bias="0.43"
         app:srcCompat="@android:color/darker_gray" />
 
     <ImageView
         android:id="@+id/card_view_6"
         android:layout_width="50dp"
-        android:layout_height="83dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="87dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:tag="6"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/card_view_2"
+        app:layout_constraintBottom_toBottomOf="@+id/layout_1n2"
+        app:layout_constraintEnd_toStartOf="@+id/layout_1n2"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/layout_1n2"
         app:layout_constraintVertical_bias="0.43"
         app:srcCompat="@android:color/darker_gray" />
 
     <ImageView
         android:id="@+id/card_view_7"
         android:layout_width="50dp"
-        android:layout_height="83dp"
-        android:layout_marginStart="8dp"
+        android:layout_height="87dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:tag="7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -116,11 +121,8 @@
     <ImageView
         android:id="@+id/card_view_8"
         android:layout_width="50dp"
-        android:layout_height="83dp"
-        android:layout_marginStart="8dp"
+        android:layout_height="87dp"
         android:layout_marginTop="4dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:tag="8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -133,10 +135,7 @@
     <ImageView
         android:id="@+id/card_view_9"
         android:layout_width="50dp"
-        android:layout_height="83dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_height="87dp"
         android:layout_marginBottom="4dp"
         android:tag="9"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
@@ -149,11 +148,8 @@
 
     <ImageView
         android:id="@+id/card_view_10"
-        android:layout_width="52dp"
-        android:layout_height="83dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="50dp"
+        android:layout_height="87dp"
         android:layout_marginBottom="8dp"
         android:tag="10"
         app:layout_constraintBottom_toTopOf="@+id/card_view_9"
@@ -163,16 +159,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@android:color/darker_gray" />
-
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintGuide_percent=".43"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
