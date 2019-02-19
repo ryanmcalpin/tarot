@@ -105,6 +105,9 @@ public class SpreadActivity extends AppCompatActivity implements View.OnClickLis
 
         titleView.setText(card.title + rev);
         imageView.setImageResource(card.imageId);
+        if (card.reversed) {
+            imageView.setRotation(180);
+        }
         descriptionView.setText(getString(mesId));
 //        descriptionView.setJustificationMode(JUSTIFICATION_MODE_INTER_WORD);
 
