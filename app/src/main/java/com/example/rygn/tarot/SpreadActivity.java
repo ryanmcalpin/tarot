@@ -74,9 +74,9 @@ public class SpreadActivity extends AppCompatActivity implements View.OnClickLis
         for (int i = 0; i < spread.size(); i++) {
             cardViews.get(i).setImageDrawable(getDrawable(spread.get(i).imageId));
             if (spread.size() == 10 && i == 1) {
-                cardViews.get(i).setRotation(90);
+                cardViews.get(i).setRotation(270);
                 if (spread.get(i).reversed) {
-                    cardViews.get(i).setRotation(270);
+                    cardViews.get(i).setRotation(90);
                 }
             } else if (spread.get(i).reversed) {
                 cardViews.get(i).setRotation(180);
