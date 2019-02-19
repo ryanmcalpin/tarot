@@ -8,8 +8,8 @@
 
     <RelativeLayout
         android:id="@+id/layout_1n2"
-        android:layout_width="87dp"
-        android:layout_height="87dp"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.33"
@@ -19,8 +19,8 @@
 
         <ImageView
             android:id="@+id/card_view_1"
-            android:layout_width="50dp"
-            android:layout_height="87dp"
+            android:layout_width="55dp"
+            android:layout_height="95dp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:layout_marginTop="0dp"
@@ -30,8 +30,8 @@
 
         <ImageView
             android:id="@+id/card_view_2"
-            android:layout_width="50dp"
-            android:layout_height="87dp"
+            android:layout_width="55dp"
+            android:layout_height="95dp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:tag="2"
@@ -51,8 +51,8 @@
 
     <ImageView
         android:id="@+id/card_view_3"
-        android:layout_width="50dp"
-        android:layout_height="87dp"
+        android:layout_width="55dp"
+        android:layout_height="95dp"
         android:layout_marginBottom="8dp"
         android:tag="3"
         app:layout_constraintBottom_toTopOf="@+id/layout_1n2"
@@ -64,8 +64,8 @@
 
     <ImageView
         android:id="@+id/card_view_4"
-        android:layout_width="50dp"
-        android:layout_height="87dp"
+        android:layout_width="55dp"
+        android:layout_height="95dp"
         android:layout_marginTop="8dp"
         android:tag="4"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -77,8 +77,8 @@
 
     <ImageView
         android:id="@+id/card_view_5"
-        android:layout_width="50dp"
-        android:layout_height="87dp"
+        android:layout_width="55dp"
+        android:layout_height="95dp"
         android:layout_marginStart="8dp"
         android:tag="5"
         app:layout_constraintBottom_toBottomOf="@+id/layout_1n2"
@@ -91,10 +91,9 @@
 
     <ImageView
         android:id="@+id/card_view_6"
-        android:layout_width="50dp"
-        android:layout_height="87dp"
+        android:layout_width="55dp"
+        android:layout_height="95dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:tag="6"
         app:layout_constraintBottom_toBottomOf="@+id/layout_1n2"
         app:layout_constraintEnd_toStartOf="@+id/layout_1n2"
@@ -106,8 +105,8 @@
 
     <ImageView
         android:id="@+id/card_view_7"
-        android:layout_width="50dp"
-        android:layout_height="87dp"
+        android:layout_width="55dp"
+        android:layout_height="95dp"
         android:layout_marginTop="8dp"
         android:tag="7"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -120,8 +119,8 @@
 
     <ImageView
         android:id="@+id/card_view_8"
-        android:layout_width="50dp"
-        android:layout_height="87dp"
+        android:layout_width="55dp"
+        android:layout_height="95dp"
         android:layout_marginTop="4dp"
         android:tag="8"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -134,8 +133,8 @@
 
     <ImageView
         android:id="@+id/card_view_9"
-        android:layout_width="50dp"
-        android:layout_height="87dp"
+        android:layout_width="55dp"
+        android:layout_height="95dp"
         android:layout_marginBottom="4dp"
         android:tag="9"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
@@ -148,8 +147,8 @@
 
     <ImageView
         android:id="@+id/card_view_10"
-        android:layout_width="50dp"
-        android:layout_height="87dp"
+        android:layout_width="55dp"
+        android:layout_height="95dp"
         android:layout_marginBottom="8dp"
         android:tag="10"
         app:layout_constraintBottom_toTopOf="@+id/card_view_9"
