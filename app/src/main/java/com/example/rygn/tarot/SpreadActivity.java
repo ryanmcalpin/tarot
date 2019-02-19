@@ -85,30 +85,29 @@ public class SpreadActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     public void showDialogFrag(int i) {
-        Card card = spread.get(i);
-
-        String rev = "";
-        int mesId = card.descriptionId;
-        if (card.reversed) {
-            rev = " (reversed)";
-            mesId = card.rDescriptionId;
-        }
-
-
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-
         LayoutInflater inflater = LayoutInflater.from(this);
+
         final View view = inflater.inflate(R.layout.dialog_view, null);
         TextView titleView = view.findViewById(R.id.title_view);
         ImageView imageView = view.findViewById(R.id.dialog_image_view);
         TextView descriptionView = view.findViewById(R.id.description_view);
 
-        titleView.setText(card.title + rev);
+        Card card = spread.get(i);
+
         imageView.setImageResource(card.imageId);
+        int mesId = card.descriptionId;
+        String rev = "";
+
         if (card.reversed) {
+            rev = " (reversed)";
+            mesId = card.rDescriptionId;
             imageView.setRotation(180);
         }
+
+        titleView.setText(card.title + rev);
         descriptionView.setText(getString(mesId));
+
 //        descriptionView.setJustificationMode(JUSTIFICATION_MODE_INTER_WORD);
 
         builder.setView(view).show();
