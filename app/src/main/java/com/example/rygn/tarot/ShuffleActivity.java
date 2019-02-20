@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class ShuffleActivity extends AppCompatActivity {
@@ -18,8 +19,8 @@ public class ShuffleActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_shuffle);
 
-        TextView testView = findViewById(R.id.textView4);
-        testView.setOnClickListener(new View.OnClickListener() {
+        Button drawCardsButton = (Button) findViewById(R.id.draw_cards_button);
+        drawCardsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(newIntent);
