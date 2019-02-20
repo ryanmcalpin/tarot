@@ -27,11 +27,13 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
             case R.id.ppf_button:
                 intent.putExtra("spread", "ppf");
+                intent.putExtra("fullName", "Past, Present, Future");
                 intent.putExtra("amount", 3);
                 break;
 
             case R.id.cc_button:
                 intent.putExtra("spread", "cc");
+                intent.putExtra("fullName", "Celtic Cross");
                 intent.putExtra("amount", 10);
                 break;
 

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "572782859015",
+    "firebase_url": "https://tarot-5ddce.firebaseio.com",
+    "project_id": "tarot-5ddce",
+    "storage_bucket": "tarot-5ddce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:572782859015:android:f6fe2cc142e977cd",
+        "android_client_info": {
+          "package_name": "com.example.rygn.tarot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "572782859015-t8n6pu9d0smlujd2uc5g4k7pe4qipesl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rygn.tarot",
+            "certificate_hash": "f9f070848e0739ec8582e2b6fffbdaa88117f13c"
+          }
+        },
+        {
+          "client_id": "572782859015-qmgep1uv18akc4b0funt1a95nnb3gtcj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkCvOhapetSrkvdXAh7WYeWU_T6-Rx6KQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "572782859015-qmgep1uv18akc4b0funt1a95nnb3gtcj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
