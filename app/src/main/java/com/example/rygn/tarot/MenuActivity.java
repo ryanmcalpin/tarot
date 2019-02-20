@@ -23,7 +23,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(MenuActivity.this, SpreadActivity.class);
+        Intent intent = new Intent(MenuActivity.this, ShuffleActivity.class);
         switch (v.getId()){
             case R.id.ppf_button:
                 intent.putExtra("spread", "ppf");
