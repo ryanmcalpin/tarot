@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Tarot</string>
-    <string name="c2">The two of cups shows a blossoming partnership, usually romantic, but it can also indicate warm friendships, beneficial business partners, and fruitful creative unions. This card shows strong mutual attraction as well as respect and harmony. There is a clear connection here.</string>
-    <string name="c2r">The two of cups when reversed can signify an imbalance or disharmony in life or in a partnership. It may mean a romantic relationship is heading toward dissolution or perhaps that it is one-sided and requires work to be balanced. The two of cups may also indicate self-love and focusing inward instead of on others. There may be a strong need for self-acceptance and self-respect.</string>
+    <string name="c2">Indicates a blossoming partnership, usually romantic, but also warm friendships, beneficial business partners, and fruitful creative unions. A strong mutual attraction as well as respect and harmony.</string>
+    <string name="c2r">Signifies an imbalance or disharmony in life or a partnership. A romantic relationship may be heading toward dissolution or is one-sided and requires work to be balanced. May also indicate self-love and focusing inward instead of on others. A need for self-acceptance and self-respect.</string>
 </resources>
