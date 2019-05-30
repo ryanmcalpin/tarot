@@ -6,6 +6,7 @@ public class Card {
     int descriptionId;
     int rDescriptionId;
     boolean reversed;
+    int i;
 
     public Card() {}
 

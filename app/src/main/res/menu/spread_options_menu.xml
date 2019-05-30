@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/t1"
-        android:title="test1"/>
+    <item android:id="@+id/saveSpread"
+        android:title="Save"/>
     <item android:id="@+id/t2"
         android:title="test2" />
 </menu>

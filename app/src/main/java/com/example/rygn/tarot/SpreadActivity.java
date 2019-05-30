@@ -22,14 +22,16 @@ public class SpreadActivity extends AppCompatActivity implements View.OnClickLis
 
     List<Card> spread;
     List<ImageView> cardViews = new ArrayList<>();
+    String spreadType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
         int cardAmount = intent.getIntExtra("amount", 0);
+        spreadType = intent.getStringExtra("spread");
 
-        switch (intent.getStringExtra("spread")) {
+        switch (spreadType) {
             case "ppf":
                 setContentView(R.layout.ppf_spread);
                 break;
@@ -78,8 +80,8 @@ public class SpreadActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.t1:
-                Toast.makeText(this, "yo1", Toast.LENGTH_SHORT).show();
+            case R.id.saveSpread:
+                saveSpread();
                 return true;
             case R.id.t2:
                 Toast.makeText(this, "yo2", Toast.LENGTH_SHORT).show();
@@ -146,6 +148,7 @@ public class SpreadActivity extends AppCompatActivity implements View.OnClickLis
         for (int i = 0; i < amount; i++) {
             int rand = r.nextInt(currentDeckSize);
             Card card = deck.get(rand);
+            card.i = rand;
             boolean orientation = r.nextBoolean();
             card.setReversed(orientation);
             drawnCards.add(card);
@@ -153,5 +156,13 @@ public class SpreadActivity extends AppCompatActivity implements View.OnClickLis
             currentDeckSize -= 1;
         }
         return drawnCards;
+    }
+
+    public void saveSpread() {
+        int[] indices = new int[spread.size()];
+        for (int i = 0; i < spread.size(); i++){
+            indices[i] = spread.get(i).i;
+        }
+        Spread spreadSave = new Spread(spreadType, indices);
     }
 }
