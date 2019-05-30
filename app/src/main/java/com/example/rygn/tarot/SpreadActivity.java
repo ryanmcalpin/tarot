@@ -1,6 +1,7 @@
 package com.example.rygn.tarot;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,12 +15,20 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 public class SpreadActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private static final String TAG = "SpreadActivity";
     List<Card> spread;
     List<ImageView> cardViews = new ArrayList<>();
     String spreadType;
@@ -159,10 +168,30 @@ public class SpreadActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     public void saveSpread() {
-        int[] indices = new int[spread.size()];
+        List<Integer> indices = new ArrayList<>();
         for (int i = 0; i < spread.size(); i++){
-            indices[i] = spread.get(i).i;
+            indices.add(spread.get(i).i);
         }
-        Spread spreadSave = new Spread(spreadType, indices);
+
+        Map<String, Object> spreadSave = new HashMap<>();
+        spreadSave.put("type", spreadType);
+        spreadSave.put("indices", indices);
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("testSpreads")
+                .add(spreadSave)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w(TAG, "Error adding document", e);
+                    }
+                });
+
     }
 }
