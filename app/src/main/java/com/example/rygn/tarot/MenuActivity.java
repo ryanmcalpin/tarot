@@ -37,7 +37,10 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                 intent.putExtra("amount", 10);
                 break;
 
-             default:
+            case R.id.saved_button:
+                break;
+
+            default:
                 Log.d("RRR", "onClick: " + "whoops");
                 break;
         }
