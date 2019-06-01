@@ -17,8 +17,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SpreadActivity" ></activity>
-        <activity android:name=".ShuffleActivity"></activity>
+        <activity android:name=".SpreadActivity" />
+        <activity android:name=".ShuffleActivity" />
+        <activity android:name=".SavedListActivity"></activity>
     </application>
 
 </manifest>

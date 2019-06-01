@@ -17,13 +17,17 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
 
         Button ppfButton = findViewById(R.id.ppf_button);
         Button ccButton = findViewById(R.id.cc_button);
+        Button savedButton = findViewById(R.id.saved_button);
+
         ppfButton.setOnClickListener(this);
         ccButton.setOnClickListener(this);
+        savedButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         Intent intent = new Intent(MenuActivity.this, ShuffleActivity.class);
+
         switch (v.getId()){
             case R.id.ppf_button:
                 intent.putExtra("spread", "ppf");
@@ -38,6 +42,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.saved_button:
+                intent.setClass(MenuActivity.this, SavedListActivity.class);
                 break;
 
             default:
