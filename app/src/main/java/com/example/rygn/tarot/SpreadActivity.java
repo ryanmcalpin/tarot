@@ -29,7 +29,7 @@ import java.util.Random;
 
 public class SpreadActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private static final String TAG = "SpreadActivity";
+    private static final String TAG = "RRR";
     List<Card> spread;
     List<ImageView> cardViews = new ArrayList<>();
     String spreadType;
