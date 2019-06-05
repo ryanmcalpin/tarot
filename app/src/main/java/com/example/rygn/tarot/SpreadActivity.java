@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -168,6 +169,9 @@ public class SpreadActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     public void saveSpread() {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        CollectionReference testSpreads = db.collection("testSpreads");
+
         List<Integer> indices = new ArrayList<>();
         for (int i = 0; i < spread.size(); i++){
             indices.add(spread.get(i).i);
@@ -177,21 +181,7 @@ public class SpreadActivity extends AppCompatActivity implements View.OnClickLis
         spreadSave.put("type", spreadType);
         spreadSave.put("indices", indices);
 
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        db.collection("testSpreads")
-                .add(spreadSave)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w(TAG, "Error adding document", e);
-                    }
-                });
+        testSpreads.document("spread1").set(spreadSave);
 
     }
 }
