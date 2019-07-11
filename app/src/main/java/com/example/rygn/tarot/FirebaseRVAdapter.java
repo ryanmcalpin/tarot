@@ -8,7 +8,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class FirebaseRVAdapter extends RecyclerView.Adapter<FirebaseRVAdapter.FirebaseViewHolder> {
-    private ArrayList<String> mDataset;
+    private String[] mDataset;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -23,7 +23,7 @@ public class FirebaseRVAdapter extends RecyclerView.Adapter<FirebaseRVAdapter.Fi
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public FirebaseRVAdapter(ArrayList<String> myDataset) {
+    public FirebaseRVAdapter(String[] myDataset) {
         mDataset = myDataset;
     }
 
@@ -44,13 +44,13 @@ public class FirebaseRVAdapter extends RecyclerView.Adapter<FirebaseRVAdapter.Fi
     public void onBindViewHolder(FirebaseViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.textView.setText(mDataset.get(position));
+        holder.textView.setText(mDataset[position]);
     }
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return mDataset.size();
+        return mDataset.length;
     }
 
 
