@@ -2,7 +2,11 @@
 Tarot app for Android
 
 Improvements
-* allow saving spreads and viewing saved spreads
+* restructure saved spreads data in firebase
+* allow saving ppf spreads
+* allow saving cc spreads
+* rework displaying saved spreads in recyclerview
+
 * add shuffling animation
 * add spread placement descriptions
 * finish card descriptions
