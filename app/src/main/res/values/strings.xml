@@ -2,4 +2,13 @@
     <string name="app_name">Tarot</string>
     <string name="c2">Indicates a blossoming partnership, usually romantic, but also warm friendships, beneficial business partners, and fruitful creative unions. A strong mutual attraction as well as respect and harmony.</string>
     <string name="c2r">Signifies an imbalance or disharmony in life or a partnership. A romantic relationship may be heading toward dissolution or is one-sided and requires work to be balanced. May also indicate self-love and focusing inward instead of on others. A need for self-acceptance and self-respect.</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
 </resources>

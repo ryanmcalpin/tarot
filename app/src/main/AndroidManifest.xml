@@ -10,16 +10,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MenuActivity">
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:label="@string/title_activity_login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MenuActivity">
+        </activity>
         <activity android:name=".SpreadActivity" />
         <activity android:name=".ShuffleActivity" />
-        <activity android:name=".SavedListActivity"></activity>
+        <activity android:name=".SavedListActivity" />
     </application>
 
 </manifest>
