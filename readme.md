@@ -2,6 +2,7 @@
 Tarot app for Android
 
 Improvements
+* implement login/user creation
 * restructure saved spreads data in firebase
 * allow saving ppf spreads
 * allow saving cc spreads
